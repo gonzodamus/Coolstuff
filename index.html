@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spell Slots Casino</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header with character info -->
+        <header class="header">
+            <div class="character-info">
+                <h1 class="game-title">🔮 Spell Slots Casino 🔮</h1>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-label">Level</span>
+                        <span class="stat-value" id="level">1</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Gold</span>
+                        <span class="stat-value" id="gold">100</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">XP</span>
+                        <span class="stat-value" id="xp">0</span>
+                        <span class="stat-subtext">/ <span id="xpNext">100</span></span>
+                    </div>
+                </div>
+                <div class="xp-bar">
+                    <div class="xp-fill" id="xpBar"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main game area -->
+        <main class="game-main">
+            <!-- Slot machine -->
+            <div class="slot-machine">
+                <div class="slot-title">✨ Mystical Reels ✨</div>
+                <div class="reels">
+                    <div class="reel" id="reel1">
+                        <div class="symbol">🔥</div>
+                    </div>
+                    <div class="reel" id="reel2">
+                        <div class="symbol">💧</div>
+                    </div>
+                    <div class="reel" id="reel3">
+                        <div class="symbol">🌍</div>
+                    </div>
+                </div>
+                
+                <!-- Bet controls -->
+                <div class="bet-controls">
+                    <label for="betAmount">Spell Cost:</label>
+                    <input type="range" id="betAmount" min="10" max="50" value="10" step="10">
+                    <span id="betDisplay">10</span> Gold
+                </div>
+                
+                <!-- Spin button -->
+                <button class="spin-btn" id="spinBtn">Cast Spell (10 Gold)</button>
+            </div>
+
+            <!-- Results area -->
+            <div class="results-area">
+                <div class="last-spell" id="lastSpell">Welcome, Mage! Cast your first spell!</div>
+                <div class="payout" id="payout"></div>
+            </div>
+        </main>
+
+        <!-- Side panels -->
+        <aside class="side-panel left">
+            <div class="panel-title">📜 Spell Codex</div>
+            <div class="spell-list" id="spellList">
+                <!-- Spells will be populated by JavaScript -->
+            </div>
+        </aside>
+
+        <aside class="side-panel right">
+            <div class="panel-title">🏆 Achievements</div>
+            <div class="achievements" id="achievements">
+                <div class="achievement locked">
+                    <span class="achievement-icon">🌟</span>
+                    <span class="achievement-name">First Spell</span>
+                    <span class="achievement-desc">Cast your first spell</span>
+                </div>
+                <div class="achievement locked">
+                    <span class="achievement-icon">💰</span>
+                    <span class="achievement-name">Gold Hoarder</span>
+                    <span class="achievement-desc">Reach 1000 gold</span>
+                </div>
+                <div class="achievement locked">
+                    <span class="achievement-icon">⚡</span>
+                    <span class="achievement-name">Spell Master</span>
+                    <span class="achievement-desc">Reach level 10</span>
+                </div>
+            </div>
+            
+            <div class="panel-title">🎯 Current Bonuses</div>
+            <div class="bonuses" id="bonuses">
+                <div class="bonus">Base XP: +1 per spin</div>
+            </div>
+        </aside>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <button class="save-btn" id="saveBtn">💾 Save Game</button>
+            <button class="reset-btn" id="resetBtn">🔄 New Game</button>
+        </footer>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
