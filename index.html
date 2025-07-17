@@ -34,11 +34,30 @@
             </div>
         </header>
 
+        <!-- Combat Status -->
+        <div class="combat-status">
+            <div class="player-status">
+                <div class="status-title">🧙‍♂️ Player</div>
+                <div class="health-bar">
+                    <div class="health-fill" id="playerHealthBar"></div>
+                </div>
+                <div class="health-text" id="playerHealth">100/100</div>
+            </div>
+            <div class="vs">⚔️</div>
+            <div class="enemy-status">
+                <div class="status-title" id="enemyName">Goblin Shaman</div>
+                <div class="health-bar">
+                    <div class="health-fill enemy" id="enemyHealthBar"></div>
+                </div>
+                <div class="health-text" id="enemyHealth">30/30</div>
+            </div>
+        </div>
+
         <!-- Main game area -->
         <main class="game-main">
             <!-- Slot machine -->
             <div class="slot-machine">
-                <div class="slot-title">✨ Mystical Reels ✨</div>
+                <div class="slot-title">✨ Reagent Gathering ✨</div>
                 <div class="reels">
                     <div class="reel" id="reel1">
                         <div class="symbol">🔥</div>
@@ -51,26 +70,25 @@
                     </div>
                 </div>
                 
-                <!-- Bet controls -->
-                <div class="bet-controls">
-                    <label for="betAmount">Spell Cost:</label>
-                    <input type="range" id="betAmount" min="10" max="50" value="10" step="10">
-                    <span id="betDisplay">10</span> Gold
-                </div>
-                
-                <!-- Spin button -->
-                <button class="spin-btn" id="spinBtn">Cast Spell (10 Gold)</button>
+                <!-- Gather button -->
+                <button class="spin-btn" id="gatherBtn">Gather Reagents</button>
+                <div class="gather-help">Roll multiples to gather reagents!</div>
             </div>
 
             <!-- Results area -->
             <div class="results-area">
-                <div class="last-spell" id="lastSpell">Welcome, Mage! Cast your first spell!</div>
+                <div class="last-spell" id="lastSpell">Welcome, Mage! Gather your first reagents!</div>
                 <div class="payout" id="payout"></div>
             </div>
         </main>
 
         <!-- Side panels -->
         <aside class="side-panel left">
+            <div class="panel-title">🧪 Reagents</div>
+            <div class="reagents" id="reagents">
+                <div class="reagent">No reagents</div>
+            </div>
+            
             <div class="panel-title">📜 Spell Codex</div>
             <div class="spell-list" id="spellList">
                 <!-- Spells will be populated by JavaScript -->
@@ -82,8 +100,8 @@
             <div class="achievements" id="achievements">
                 <div class="achievement locked">
                     <span class="achievement-icon">🌟</span>
-                    <span class="achievement-name">First Spell</span>
-                    <span class="achievement-desc">Cast your first spell</span>
+                    <span class="achievement-name">First Gather</span>
+                    <span class="achievement-desc">Gather your first reagents</span>
                 </div>
                 <div class="achievement locked">
                     <span class="achievement-icon">💰</span>
@@ -97,9 +115,13 @@
                 </div>
             </div>
             
-            <div class="panel-title">🎯 Current Bonuses</div>
-            <div class="bonuses" id="bonuses">
-                <div class="bonus">Base XP: +1 per spin</div>
+            <div class="panel-title">❓ How to Play</div>
+            <div class="help-text">
+                <div>1. Gather reagents by rolling multiples</div>
+                <div>2. Use reagents to cast spells</div>
+                <div>3. Damage spells hurt enemies</div>
+                <div>4. Healing spells restore your HP</div>
+                <div>5. Defeat enemies for gold and XP!</div>
             </div>
         </aside>
 
